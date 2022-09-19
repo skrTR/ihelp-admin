@@ -1,0 +1,25 @@
+/* SCHOOLS */
+export const GET_SCHOOLS = "GET_SCHOOLS"
+export const GET_SCHOOLS_SUCCESS = "GET_SCHOOLS_SUCCESS"
+export const GET_SCHOOLS_FAIL = "GET_SCHOOLS_FAIL"
+
+/**
+ * add user
+ */
+export const ADD_NEW_SCHOOL = "ADD_NEW_SCHOOL"
+export const ADD_SCHOOL_SUCCESS = "ADD_SCHOOL_SUCCESS"
+export const ADD_SCHOOL_FAIL = "ADD_SCHOOL_FAIL"
+
+/**
+ * Edit user
+ */
+export const UPDATE_SCHOOL = "UPDATE_SCHOOL"
+export const UPDATE_SCHOOL_SUCCESS = "UPDATE_SCHOOL_SUCCESS"
+export const UPDATE_SCHOOL_FAIL = "UPDATE_SCHOOL_FAIL"
+
+/**
+ * Delete user
+ */
+export const DELETE_SCHOOL = "DELETE_SCHOOL"
+export const DELETE_SCHOOL_SUCCESS = "DELETE_SCHOOL_SUCCESS"
+export const DELETE_SCHOOL_FAIL = "DELETE_SCHOOL_FAIL"
