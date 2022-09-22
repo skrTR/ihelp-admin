@@ -43,7 +43,7 @@ const CompanyCreate = () => {
     onSubmit: values => {
       axios
         .post(
-          `http://128.199.128.37/api/v1/profiles`,
+          `https://ihelp-hr.com/api/v1/profiles`,
           {
             email: values["email"],
             firstName: values["firstName"],
@@ -68,7 +68,7 @@ const CompanyCreate = () => {
             data.append("file", selectedFiles[0])
             xhr.open(
               "PUT",
-              `http://128.199.128.37/api/v1/profiles/profile/${newCompany._id}`,
+              `https://ihelp-hr.com/api/v1/profiles/profile/${newCompany._id}`,
               {
                 headers,
               }

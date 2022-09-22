@@ -31,7 +31,7 @@ import logo from "assets/images/ihelp.png"
 
 const Login = props => {
   //meta title
-  document.title = "Login | Skote - React Admin & Dashboard Template"
+  document.title = "Нэвтрэх"
 
   const dispatch = useDispatch()
 
@@ -40,8 +40,8 @@ const Login = props => {
     enableReinitialize: true,
 
     initialValues: {
-      phone: "97018800" || "",
-      password: "123456" || "",
+      phone: "" || "",
+      password: "" || "",
     },
     validationSchema: Yup.object({
       phone: Yup.string().required("Please Enter Your phone"),

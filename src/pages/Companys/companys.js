@@ -102,7 +102,7 @@ const CompanyList = props => {
               <div>
                 <img
                   className="rounded-circle avatar-xs"
-                  src={`http://128.199.128.37/upload/${cellProps.profile}`}
+                  src={`https://ihelp-hr.com/upload/${cellProps.profile}`}
                   alt=""
                 />
               </div>

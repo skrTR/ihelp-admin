@@ -98,7 +98,7 @@ const UserVerify = props => {
               <div>
                 <img
                   className="rounded-circle avatar-xs"
-                  src={`http://128.199.128.37/upload/${cellProps.profile}`}
+                  src={`https://ihelp-hr.com/upload/${cellProps.profile}`}
                   alt=""
                 />
               </div>
@@ -152,31 +152,31 @@ const UserVerify = props => {
                 {cellProps.authPhoto.image1 && (
                   <ModalImage
                     className="rounded-circle avatar-xs"
-                    small={`http://128.199.128.37/upload/${cellProps.authPhoto.image1}`}
-                    large={`http://128.199.128.37/upload/${cellProps.authPhoto.image1}`}
+                    small={`https://ihelp-hr.com/upload/${cellProps.authPhoto.image1}`}
+                    large={`https://ihelp-hr.com/upload/${cellProps.authPhoto.image1}`}
                     alt="Hello World!"
                   />
                 )}
                 {cellProps.authPhoto.image2 && (
                   <ModalImage
                     className="rounded-circle avatar-xs"
-                    small={`http://128.199.128.37/upload/${cellProps.authPhoto.image2}`}
-                    large={`http://128.199.128.37/upload/${cellProps.authPhoto.image2}`}
+                    small={`https://ihelp-hr.com/upload/${cellProps.authPhoto.image2}`}
+                    large={`https://ihelp-hr.com/upload/${cellProps.authPhoto.image2}`}
                     alt="Hello World!"
                   />
                 )}
                 {cellProps.authPhoto.image3 && (
                   <ModalImage
                     className="rounded-circle avatar-xs"
-                    small={`http://128.199.128.37/upload/${cellProps.authPhoto.image3}`}
-                    large={`http://128.199.128.37/upload/${cellProps.authPhoto.image3}`}
+                    small={`https://ihelp-hr.com/upload/${cellProps.authPhoto.image3}`}
+                    large={`https://ihelp-hr.com/upload/${cellProps.authPhoto.image3}`}
                     alt="Hello World!"
                   />
                 )}
                 <ModalImage
                   className="rounded-circle avatar-xs"
-                  small={`http://128.199.128.37/upload/${cellProps.authPhoto.image4}`}
-                  large={`http://128.199.128.37/upload/${cellProps.authPhoto.image4}`}
+                  small={`https://ihelp-hr.com/upload/${cellProps.authPhoto.image4}`}
+                  large={`https://ihelp-hr.com/upload/${cellProps.authPhoto.image4}`}
                   alt="Hello World!"
                 />
               </div>

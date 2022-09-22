@@ -74,7 +74,7 @@ const SchoolList = props => {
           data.append("file", selectedFiles[0])
           xhr.open(
             "PUT",
-            `http://128.199.128.37/api/v1/schools/${contact.id}/photo`,
+            `https://ihelp-hr.com/api/v1/schools/${contact.id}/photo`,
             {
               headers,
             }
@@ -123,7 +123,7 @@ const SchoolList = props => {
               <div>
                 <img
                   className="rounded-circle avatar-xs"
-                  src={`http://128.199.128.37/upload/${cellProps.photo}`}
+                  src={`https://ihelp-hr.com/upload/${cellProps.photo}`}
                   alt=""
                 />
               </div>
