@@ -1,5 +1,6 @@
 import { call, put, takeEvery } from "redux-saga/effects"
 
+import { toast } from "react-toastify"
 // Crypto Redux States
 import {
   GET_SCHOOLS,
@@ -40,8 +41,25 @@ function* onUpdateSchool({ payload: school }) {
   try {
     const response = yield call(updateSchool, school)
     yield put(updateSchoolSuccess(response.data))
+    toast.success("Амжиллтай өөрчиллөө", {
+      position: "top-center",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+    })
   } catch (error) {
     yield put(updateSchoolFail(error))
+    let message = error.response.data.error.message
+    toast.error(message, {
+      position: "top-center",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+    })
   }
 }
 
@@ -49,8 +67,25 @@ function* onDeleteSchool({ payload: school }) {
   try {
     const response = yield call(deleteSchool, school)
     yield put(deleteSchoolSuccess(response.data))
+    toast.success("Амжиллтай устгалаа", {
+      position: "top-center",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+    })
   } catch (error) {
     yield put(deleteSchoolFail(error))
+    let message = error.response.data.error.message
+    toast.error(message, {
+      position: "top-center",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+    })
   }
 }
 
@@ -58,8 +93,25 @@ function* onAddNewSchool({ payload: school }) {
   try {
     const response = yield call(addNewSchool, school)
     yield put(addSchoolSuccess(response.data))
+    toast.success("Амжиллтай нэмлээ", {
+      position: "top-center",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+    })
   } catch (error) {
     yield put(addSchoolFail(error))
+    let message = error.response.data.error.message
+    toast.error(message, {
+      position: "top-center",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+    })
   }
 }
 

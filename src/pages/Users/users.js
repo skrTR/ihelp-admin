@@ -391,9 +391,9 @@ const UserList = props => {
                             <div className="mb-3">
                               <Label className="form-label">Ролэ</Label>
                               <Input
+                                id="role"
                                 name="role"
-                                label="role"
-                                type="text"
+                                type="select"
                                 onChange={validation.handleChange}
                                 onBlur={validation.handleBlur}
                                 value={validation.values.role || ""}
@@ -403,13 +403,11 @@ const UserList = props => {
                                     ? true
                                     : false
                                 }
-                              />
-                              {validation.touched.role &&
-                              validation.errors.role ? (
-                                <FormFeedback type="invalid">
-                                  {validation.errors.role}
-                                </FormFeedback>
-                              ) : null}
+                              >
+                                <option>user</option>
+                                <option>operator</option>
+                                <option>admin</option>
+                              </Input>
                             </div>
                             <div className="mb-3">
                               <Label className="form-label">Пойнт</Label>

@@ -3,7 +3,7 @@ import React from "react"
 
 import { Switch, BrowserRouter as Router } from "react-router-dom"
 import { connect } from "react-redux"
-
+import { ToastProvider } from "react-toast-notifications"
 // Import Routes all
 import { authProtectedRoutes, publicRoutes } from "./routes"
 
@@ -16,7 +16,8 @@ import NonAuthLayout from "./components/NonAuthLayout"
 
 // Import scss
 import "./assets/scss/theme.scss"
-
+import { ToastContainer } from "react-toastify"
+import "react-toastify/dist/ReactToastify.css"
 const App = () => {
   function getLayout() {
     let layoutCls = VerticalLayout
@@ -27,6 +28,7 @@ const App = () => {
   const Layout = getLayout()
   return (
     <React.Fragment>
+      <ToastContainer />
       <Router>
         <Switch>
           {publicRoutes.map((route, idx) => (

@@ -51,6 +51,8 @@ const CompanyList = props => {
       email: (contact && contact.email) || "",
       role: (contact && contact.role) || "",
       point: (contact && contact.point) || 0,
+      isEmployer: (contact && contact.isEmployer) || true,
+      isEmployee: (contact && contact.isEmployer) || false,
     },
     validationSchema: Yup.object({
       firstName: Yup.string().required("Please Enter Your Name"),
@@ -67,6 +69,8 @@ const CompanyList = props => {
         email: values.email,
         role: values.role,
         point: values.point,
+        isEmployer: values.isEmployer,
+        isEmployee: values.isEmployee,
       }
       // update company
       dispatch(onUpdateCompany(updateCompany))
@@ -224,6 +228,8 @@ const CompanyList = props => {
       email: company.email,
       role: company.role,
       point: company.point,
+      isEmployee: company.isEmployee,
+      isEmployer: company.isEmployer,
     })
     setIsEdit(true)
 
@@ -373,9 +379,9 @@ const CompanyList = props => {
                             <div className="mb-3">
                               <Label className="form-label">Ролэ</Label>
                               <Input
+                                id="role"
                                 name="role"
-                                label="role"
-                                type="text"
+                                type="select"
                                 onChange={validation.handleChange}
                                 onBlur={validation.handleBlur}
                                 value={validation.values.role || ""}
@@ -385,13 +391,37 @@ const CompanyList = props => {
                                     ? true
                                     : false
                                 }
+                              >
+                                <option>user</option>
+                                <option>operator</option>
+                                <option>admin</option>
+                              </Input>
+                            </div>
+                            <div
+                              className="mb-3"
+                              style={{
+                                alignItems: "center",
+                              }}
+                            >
+                              <Input
+                                type="checkbox"
+                                id="isEmployer"
+                                name="isEmployer"
+                                onChange={validation.handleChange}
+                                onBlur={validation.handleBlur}
+                                value={validation.values.isEmployer}
                               />
-                              {validation.touched.role &&
-                              validation.errors.role ? (
-                                <FormFeedback type="invalid">
-                                  {validation.errors.role}
-                                </FormFeedback>
-                              ) : null}
+                              <Label check>employer</Label>
+                              <Input
+                                type="checkbox"
+                                style={{ marginLeft: 100 }}
+                                id="isEmployee"
+                                name="isEmployee"
+                                onChange={validation.handleChange}
+                                onBlur={validation.handleBlur}
+                                value={validation.values.isEmployee || false}
+                              />
+                              <Label check>employee</Label>
                             </div>
                             <div className="mb-3">
                               <Label className="form-label">Пойнт</Label>

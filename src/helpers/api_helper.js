@@ -4,6 +4,7 @@ const obj = JSON.parse(localStorage.getItem("amazon-token"))
 const token = `Bearer ${obj}`
 //apply base url for axios
 const API_URL = "https://ihelp-hr.com/api/v1"
+
 // https://novelistgroup.com
 const axiosApi = axios.create({
   baseURL: API_URL,

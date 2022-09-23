@@ -1,5 +1,5 @@
 import { call, put, takeEvery } from "redux-saga/effects"
-
+import { toast } from "react-toastify"
 // Login Redux States
 import { LOGIN_USER, LOGOUT_USER } from "./actionTypes"
 import { apiError, loginSuccess } from "./actions"
@@ -17,7 +17,16 @@ function* loginUser({ payload: { user, history } }) {
     yield put(loginSuccess(response))
     history.push("/dashboard")
   } catch (error) {
-    yield put(apiError(error))
+    // yield put(apiError(error))
+    let message = error.response.data.error.message
+    toast.error(message, {
+      position: "top-center",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+    })
   }
 }
 

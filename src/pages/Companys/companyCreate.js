@@ -18,6 +18,7 @@ import "react-datepicker/dist/react-datepicker.css"
 import { useFormik } from "formik"
 import Breadcrumbs from "../../components/Common/Breadcrumb"
 import axios from "axios"
+import { toast } from "react-toastify"
 const CompanyCreate = () => {
   let history = useHistory()
   const [selectedFiles, setselectedFiles] = useState([])
@@ -33,6 +34,8 @@ const CompanyCreate = () => {
       firstName: "",
       role: "user",
       isApproved: false,
+      isEmployee: false,
+      isEmployer: false,
       location: "",
       createYear: "",
       web: "",
@@ -50,6 +53,8 @@ const CompanyCreate = () => {
             role: values["role"],
             isApproved: values["isApproved"],
             location: values["location"],
+            isEmployee: values["isEmployee"],
+            isEmployer: values["isEmployer"],
             createYear: values["createYear"],
             web: values["web"],
             employerNumber: values["employerNumber"],
@@ -75,9 +80,26 @@ const CompanyCreate = () => {
             )
             xhr.send(data)
           }
+          toast.success("Амжиллтай шинэ компани нэмлээ", {
+            position: "top-center",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+          })
         })
         .catch(err => {
           console.log(err)
+          let message = err.response.data.error.message
+          toast.error(message, {
+            position: "top-center",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+          })
         })
     },
   })
@@ -198,6 +220,35 @@ const CompanyCreate = () => {
                           <option>operator</option>
                           <option>admin</option>
                         </Input>
+                      </Col>
+                    </FormGroup>
+                    <FormGroup className="mb-4" row>
+                      <Label
+                        htmlFor="projectdesc"
+                        className="col-form-label col-lg-2"
+                      >
+                        Компани төрөл
+                      </Label>
+                      <Col lg="10">
+                        <Input
+                          type="checkbox"
+                          id="isEmployer"
+                          name="isEmployer"
+                          onChange={validation.handleChange}
+                          onBlur={validation.handleBlur}
+                          value={validation.values.isEmployer}
+                        />
+                        <Label check>employer</Label>
+                        <Input
+                          type="checkbox"
+                          style={{ marginLeft: 100 }}
+                          id="isEmployee"
+                          name="isEmployee"
+                          onChange={validation.handleChange}
+                          onBlur={validation.handleBlur}
+                          value={validation.values.isEmployee || false}
+                        />
+                        <Label check>employee</Label>
                       </Col>
                     </FormGroup>
                     {/* verify */}
