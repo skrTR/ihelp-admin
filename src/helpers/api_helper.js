@@ -21,19 +21,19 @@ export async function get(url, config = {}) {
   return await axiosApi.get(url, { ...config }).then(response => response.data)
 }
 
-export async function post(url, data, config = {}) {
+export async function post(url, data, config = { token }) {
   return axiosApi
     .post(url, { ...data }, { ...config })
     .then(response => response.data)
 }
 
-export async function put(url, data, config = {}) {
+export async function put(url, data, config = { token }) {
   return axiosApi
     .put(url, { ...data }, { ...config })
     .then(response => response.data)
 }
 
-export async function del(url, config = {}) {
+export async function del(url, config = { token }) {
   return await axiosApi
     .delete(url, { ...config })
     .then(response => response.data)
