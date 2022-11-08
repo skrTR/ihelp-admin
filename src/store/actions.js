@@ -9,3 +9,5 @@ export * from "./contacts/actions"
 export * from "./company/actions"
 // сургууль
 export * from "./school/actions"
+// ажил
+export * from "./jobs/actions"

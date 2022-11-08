@@ -18,12 +18,14 @@ axiosApi.interceptors.response.use(
 )
 
 export async function get(url, config = {}) {
-  return await axiosApi.get(url, { ...config }).then(response => response.data)
+  return await axiosApi
+    .get(url, { ...config }, { token })
+    .then(response => response.data)
 }
 
 export async function post(url, data, config = {}) {
   return axiosApi
-    .post(url, { ...data }, { ...config })
+    .post(url, { ...data }, { ...config }, { token })
     .then(response => response.data)
 }
 
@@ -35,6 +37,6 @@ export async function put(url, data, config = {}) {
 
 export async function del(url, config = {}) {
   return await axiosApi
-    .delete(url, { ...config })
+    .delete(url, { ...config }, { token })
     .then(response => response.data)
 }

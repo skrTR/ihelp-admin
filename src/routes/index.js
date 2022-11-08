@@ -13,6 +13,7 @@ import companys from "pages/Companys/companys"
 import companysVerify from "pages/Companys/companysVerify"
 import CompanyCreate from "pages/Companys/companyCreate"
 import schoolsList from "pages/SchoolList/schools-list"
+import jobsList from "pages/AllJobs/jobs-list"
 
 const authProtectedRoutes = [
   { path: "/dashboard", component: Dashboard },
@@ -30,6 +31,8 @@ const authProtectedRoutes = [
   { path: "/company-create", component: CompanyCreate },
   // бүх Сургууль
   { path: "/schools", component: schoolsList },
+  // бүх ажлын зар
+  { path: "/jobs", component: jobsList },
   // this route should be at the end of all other routes
   // eslint-disable-next-line react/display-name
   { path: "/", exact: true, component: () => <Redirect to="/dashboard" /> },

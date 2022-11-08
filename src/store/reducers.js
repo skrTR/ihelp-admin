@@ -14,6 +14,8 @@ import companys from "./company/reducer"
 
 // Сургууль
 import schools from "./school/reducer"
+// jobs
+import jobs from "./jobs/reducer"
 
 const rootReducer = combineReducers({
   // public
@@ -22,6 +24,7 @@ const rootReducer = combineReducers({
   contacts,
   companys,
   schools,
+  jobs,
 })
 
 export default rootReducer

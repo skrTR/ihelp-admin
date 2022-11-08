@@ -308,7 +308,7 @@ const UserList = props => {
                                 value={validation.values.lastName || ""}
                                 invalid={
                                   validation.touched.lastName &&
-                                  validation.errors.firslastNametName
+                                  validation.errors.lastName
                                     ? true
                                     : false
                                 }

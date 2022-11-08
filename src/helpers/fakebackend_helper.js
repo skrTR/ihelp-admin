@@ -1,4 +1,3 @@
-import axios from "axios"
 import { del, get, post, put } from "./api_helper"
 import * as url from "./url_helper"
 
@@ -46,5 +45,17 @@ export const updateSchool = school =>
   put(`${url.UPDATE_SCHOOL}/${school.id}`, school)
 // delete компани
 export const deleteSchool = school => del(`${url.DELETE_SCHOOL}/${school._id}`)
+//
+// get ажил
+export const getJobs = () => get(url.GET_JOBS)
+// add ажил
+export const addNewJob = job => post(url.ADD_NEW_JOB, job)
+// update ажил
+export const updateJob = job => put(`${url.UPDATE_JOB}/${job.id}`, job)
+// delete ажил
+export const deleteJob = job => del(`${url.DELETE_JOB}/${job._id}`)
+// get project details
+export const getJobsDetails = id =>
+  get(`${url.GET_PROJECT_DETAIL}/${id}`, { params: { id } })
 
 export { getLoggedInUser, isUserAuthenticated, postJwtLogin }
